@@ -1,0 +1,28 @@
+** start of script.js **
+
+function chunkArrayInGroups(array, number){
+  let dimensionalArray = [];
+  let smallArray = [];
+
+  for(let i = 0; i < array.length; i++){
+    let element = array[i]; // Je récupère l'élement de notre liste array
+    smallArray.push(element); // On ajoute cette élément à notre sous liste
+  
+  // Si notre sous liste est égale à notre nombre entré
+    if (smallArray.length === number) {
+      dimensionalArray.push([...smallArray]); // On ajoute la sous liste à notre liste
+      smallArray = []; // On réinitialise notre sous lise pour recommencer
+    }
+    
+  }
+
+  if (smallArray.length > 0) {
+    dimensionalArray.push(smallArray);
+  }
+  
+  return dimensionalArray;
+}
+
+
+** end of script.js **
+
