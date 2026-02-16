@@ -63,13 +63,3 @@ Most `.txt` files contain:
 1) the freeCodeCamp exercise instructions / prompt  
 2) my code solution
 
-### Tip for readability (without changing file format)
-At the top of each `.txt`, keep a simple separator:
-
-```txt
---- PROMPT ---
-(paste prompt here)
-
---- SOLUTION ---
-(paste code here)
-
