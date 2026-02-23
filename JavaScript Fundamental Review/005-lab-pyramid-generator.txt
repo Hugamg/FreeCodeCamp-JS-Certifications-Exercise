@@ -1,0 +1,56 @@
+TITLE: Lab pyramid generator
+SECTION: JavaScript Fundamental Review
+EXERCISE NUMBER: 005
+
+----------------------------------------
+PROMPT
+----------------------------------------
+
+Objective: Fulfill the user stories below and get all the tests to pass to complete the lab.
+
+User Stories:
+
+    - You should have a function named pyramid that takes three arguments.
+    - The first argument should be a string representing the pattern character to repeat in your pyramid.
+    - The second argument should be an integer representing the number of rows in the pyramid.
+    - The third argument should be a Boolean value.
+    - The pyramid function should return a string in which the pattern character is repeated and arranged to form a pyramid having the vertex facing upwards when the third argument is false.
+    - When the third argument is true the pyramid should have the vertex facing downwards.
+    - The vertex row should have a single pattern character, and each other row should have two pattern characters more than the previous one.
+    - Each row should start with a number of spaces sufficient to put the center character of each row in the same column and there should not be any spaces at the end of each row.
+    - The pyramid should start and end with a newline character.
+
+For example, calling pyramid("o", 4, false) should give this output:
+
+
+----------------------------------------
+SOLUTION
+----------------------------------------
+
+function pyramid (str, int, bool){
+  let result = "\n";
+
+  if(bool === false){
+    for(let i = 1 ; i <= int ; i++){
+      let espaces = " ".repeat(int - i);
+      let caracteres = str.repeat(i * 2 -1);
+      let ligne = espaces + caracteres + "\n";
+
+      result += ligne; 
+    }
+  } else {
+      for(let i = int ; i >= 1 ; i--){
+      let espaces = " ".repeat(int - i);
+      let caracteres = str.repeat(i * 2 -1);
+      let ligne = espaces + caracteres + "\n";
+
+      result += ligne; 
+    }
+  }
+
+    return result
+  }
+
+
+** end of script.js **
+
