@@ -1,0 +1,49 @@
+TITLE: Build a title case converter 
+SECTION: JavaScript Fundamental Review
+EXERCISE NUMBER: 007
+
+----------------------------------------
+PROMPT
+----------------------------------------
+
+
+
+
+In this lab you will create a function that converts a string to title case. Title case means that the first letter of each word is capitalized and the rest of the word is in lower case.
+
+"Web Development Is Awesome" is an example of a title cased string.
+
+Objective: Fulfill the user stories below and get all the tests to pass to complete the lab.
+
+User Stories:
+
+    1. You should have a titleCase function that takes a string as an argument.
+    2. The titleCase function should return a string with the first letter of each word capitalized and the rest of the word in lower case.
+    3. titleCase("I like to code") should return "I Like To Code".
+    4. titleCase("javaScript is fun") should return "Javascript Is Fun".
+
+
+
+----------------------------------------
+SOLUTION
+----------------------------------------
+
+function titleCase(str){
+  let words = str.toLowerCase().split(" ");
+
+  let array = [];
+
+  words.forEach(words => {
+
+    let firstLetter = words.charAt(0).toUpperCase();
+
+    let replace = words.replace(words.charAt(0), firstLetter);
+
+    array.push(replace);
+  })
+
+  return array.join(" ");
+}
+
+** end of script.js **
+
