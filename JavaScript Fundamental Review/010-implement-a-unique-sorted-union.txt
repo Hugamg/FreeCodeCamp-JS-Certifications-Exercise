@@ -1,0 +1,39 @@
+ITLE: Implement a unique sorted union
+SECTION: JavaScript Fundamental Review
+EXERCISE NUMBER: 010
+
+----------------------------------------
+PROMPT
+----------------------------------------
+
+
+Objective: Fulfill the user stories below and get all the tests to pass to complete the lab.
+
+User Stories:
+
+    You should have a function named uniteUnique.
+    The uniteUnique function should accept two or more arrays as arguments.
+    The function should return a new array that contains unique values from the argument arrays, in the order they are first found in the arguments. For example, an input like [1, 2, 4], [2, 3, 5] would have an output of [1, 2, 4, 3, 5].
+
+
+----------------------------------------
+SOLUTION
+----------------------------------------
+
+function uniteUnique(...args) {
+  let result = [];
+
+  for (let i = 0; i < args.length; i++) {       
+    for (let j = 0; j < args[i].length; j++) {   
+      if (!result.includes(args[i][j])) {         
+        result.push(args[i][j]);          
+      }
+    }
+  }
+
+  return result;
+}
+
+
+** end of script.js **
+
