@@ -1,4 +1,4 @@
-ITLE: Implement a unique sorted union
+TITLE: Implement a unique sorted union
 SECTION: JavaScript Fundamental Review
 EXERCISE NUMBER: 010
 
