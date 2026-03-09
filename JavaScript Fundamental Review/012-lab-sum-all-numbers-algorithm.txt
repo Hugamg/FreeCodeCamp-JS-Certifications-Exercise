@@ -1,0 +1,63 @@
+TITLE: Lab sum all numbers algorithm
+SECTION: JavaScript Fundamental Review
+EXERCISE NUMBER: 012
+
+----------------------------------------
+PROMPT
+----------------------------------------
+
+In this lab, you will need to design a sum all numbers algorithm.
+
+Objective: Fulfill the user stories below and get all the tests to pass to complete the lab.
+
+User Stories:
+
+    You should have a function named sumAll that accepts an array of two numbers.
+    sumAll([n, m]) should return the sum of n and m plus the sum of all the numbers between them. The lowest number will not always come first. For example, sumAll([4,1]) should return 10 because sum of all the numbers between 1 and 4 (both inclusive) is 10.
+
+
+----------------------------------------
+SOLUTION
+----------------------------------------
+
+// First solution
+/* function sumAll(array){
+  // First solution
+  let firstIndex = array[0];
+  let secondIndex = array[1];
+  let result = 0;
+  
+  if(firstIndex > secondIndex){
+    while(secondIndex <= firstIndex) {
+      result += secondIndex;
+      secondIndex +=1;
+    }
+  } else if (secondIndex > firstIndex) {
+    while(firstIndex <= secondIndex) {
+      result += firstIndex;
+      firstIndex +=1;
+    }
+  }
+
+  return result
+} */
+
+// Second solution
+function sumAll(array){
+  let min = Math.min(...array);
+  let max = Math.max(...array);
+  let result = 0;
+
+  while(min <= max){
+    result += min;
+    min += 1;
+  }
+
+  return result
+}
+
+
+
+
+** end of script.js **
+
