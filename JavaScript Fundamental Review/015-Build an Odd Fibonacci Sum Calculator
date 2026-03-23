@@ -1,0 +1,31 @@
+/*TITLE: Build an Odd Fibonacci Sum Calculator
+SECTION: JavaScript Fundamental Review
+EXERCISE NUMBER: 015
+
+----------------------------------------
+PROMPT
+----------------------------------------
+In this lab you will build an odd Fibonacci sum calculator that computes the sum of all odd Fibonacci numbers that are less than or equal to a given positive integer.
+
+Objective: Fulfill the user stories below and get all the tests to pass to complete the lab.
+
+User Stories
+
+    You should have a sumFibs function that accepts a number as an argument.
+    The sumFibs function should return the sum of all odd Fibonacci numbers that are less than or equal to the given number.
+    The Fibonacci sequence starts with 0 and 1, and each subsequent number is the sum of the two previous ones.
+    Only the odd Fibonacci numbers should be added to the sum.
+
+----------------------------------------
+SOLUTION
+---------------------------------------- */
+
+function sumFibs(num) {
+  let a = 0, b = 1, sum = 0;
+  while (a <= num) {
+    if (a % 2 !== 0) sum += a;
+    [a, b] = [b, a + b];
+  }
+  return sum;
+}
+
