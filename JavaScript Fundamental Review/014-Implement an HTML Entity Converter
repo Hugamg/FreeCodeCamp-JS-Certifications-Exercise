@@ -1,0 +1,66 @@
+/*TITLE: Implement an HTML Entity Converter
+SECTION: JavaScript Fundamental Review
+EXERCISE NUMBER: 014
+
+----------------------------------------
+PROMPT
+----------------------------------------
+
+his lab is about converting special characters in a string with their corresponding HTML entities.
+
+Objective: Fulfill the user stories below and get all the tests to pass to complete the lab.
+
+User Stories:
+
+    You should have a convertHTML function that accepts a string as an argument.
+
+    The convertHTML function should return a new string by converting special characters in the argument string to their corresponding HTML entities.
+        & should be converted to &amp;.
+        < should be converted to &lt;.
+        > should be converted to &gt;.
+        " should be converted to &quot;.
+        ' should be converted to &apos;
+
+
+----------------------------------------
+SOLUTION
+---------------------------------------- */
+
+function convertHTML(string){
+  let result = "";
+
+  for(let i = 0; i < string.length ; i ++){
+    switch(true){
+      case string[i] == "&":
+        result += "&amp;";
+
+        break;
+
+      case string[i] == "<":
+        result += "&lt;";
+
+        break;
+
+      case string[i] == ">":
+        result += "&gt;";
+
+        break;
+
+      case string[i] == '"':
+        result += "&quot;";
+        
+        break;
+
+      case string[i] == "'":
+        result += "&apos;";
+
+        break;
+        
+      default :
+        result += string[i];
+    }
+  }
+
+  return result
+}
+
