@@ -1,0 +1,67 @@
+/*TITLE: Build a Prime Number Sum Calculator
+SECTION: Higher Order Functions and Callbacks
+EXERCISE NUMBER: 005
+
+----------------------------------------
+PROMPT
+----------------------------------------
+
+n this lab, you will build a calculator that takes a number and returns the sum of all prime numbers that are less than or equal to that number.
+
+Objective: Fulfill the user stories below and get all the tests to pass to complete the lab.
+
+User Stories:
+
+    You should have a sumPrimes function that accepts a number as an argument.
+    The sumPrimes function should return the sum of all prime numbers less than or equal to the provided number.
+    If the input number is less than 2, the function should return 0.
+
+----------------------------------------
+SOLUTION
+---------------------------------------- */
+
+function nbrPrime(nbr) {
+  if (nbr < 2) return false;
+  if (nbr === 2) return true;
+  if (nbr % 2 === 0) return false;
+
+  const limit = Math.floor(Math.sqrt(nbr));
+
+  for (let i = 3; i <= limit; i += 2) {
+    if (nbr % i === 0) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+// Use .reduce()
+function sumPrimes(number) {
+  let arrayPrimes = [];
+
+  for (let i = 2; i <= number; i++) {
+    if (nbrPrime(i)) {
+      arrayPrimes.push(i);
+    }
+  }
+
+  return arrayPrimes.reduce((sum, nbr) => sum + nbr, 0);
+}
+
+/* Or more simple 
+
+function sumPrimes(number) {
+  let sum = 0;
+
+  for (let i = 2; i <= number; i++) {
+    if (nbrPrime(i)) {
+      sum += i;
+    }
+  }
+
+  return sum;
+}
+
+*/
+
