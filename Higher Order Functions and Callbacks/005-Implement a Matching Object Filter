@@ -33,5 +33,5 @@ function whatIsInAName(objectArray, srcObject){
 
   return objectArray.filter(item => keys.reduce((acc, key) => acc && item[key] === source[key], true)
   );
-}*/
+}
 

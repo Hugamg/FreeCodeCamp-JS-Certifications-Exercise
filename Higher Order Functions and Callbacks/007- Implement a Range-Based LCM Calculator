@@ -1,6 +1,6 @@
-/*TITLE: Build a Prime Number Sum Calculator
+/*TITLE: Implement a Range-Based LCM Calculator
 SECTION: Higher Order Functions and Callbacks
-EXERCISE NUMBER: 006
+EXERCISE NUMBER: 007
 
 ----------------------------------------
 PROMPT
@@ -19,49 +19,22 @@ User Stories:
 ----------------------------------------
 SOLUTION
 ---------------------------------------- */
-
-function nbrPrime(nbr) {
-  if (nbr < 2) return false;
-  if (nbr === 2) return true;
-  if (nbr % 2 === 0) return false;
-
-  const limit = Math.floor(Math.sqrt(nbr));
-
-  for (let i = 3; i <= limit; i += 2) {
-    if (nbr % i === 0) {
-      return false;
-    }
-  }
-
-  return true;
+function gcd(...array){
+  const _gcd = (x, y) => (!y ? x : _gcd(y, x % y));
+  return [...array].reduce((a, b) => _gcd(a, b));
 }
 
-// Use .reduce()
-function sumPrimes(number) {
-  let arrayPrimes = [];
+function smallestCommons(array){
+  const totalArray= [];
+  const lcd = (x, y) => ((x * y) / gcd(x,y));
 
-  for (let i = 2; i <= number; i++) {
-    if (nbrPrime(i)) {
-      arrayPrimes.push(i);
-    }
+  let bigNumberArray = Math.max(array[0], array[1]);
+  let smallNumberArray = Math.min(array[0], array[1]);
+
+  for(let i = smallNumberArray; i <= bigNumberArray; i++){
+    totalArray.push(i);
   }
 
-  return arrayPrimes.reduce((sum, nbr) => sum + nbr, 0);
+  return totalArray.reduce((a, b) => lcd(a, b))
 }
-
-/* Or more simple 
-
-function sumPrimes(number) {
-  let sum = 0;
-
-  for (let i = 2; i <= number; i++) {
-    if (nbrPrime(i)) {
-      sum += i;
-    }
-  }
-
-  return sum;
-}
-
-*/
 

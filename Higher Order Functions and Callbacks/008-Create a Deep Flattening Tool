@@ -1,0 +1,52 @@
+/*TITLE: Create a Deep Flattening Tool
+SECTION: Higher Order Functions and Callbacks
+EXERCISE NUMBER: 008
+
+----------------------------------------
+PROMPT
+----------------------------------------
+
+In this lab, you will be implementing an array flattening algorithm.
+
+Flattening an array means turning a nested array of any depth into a single, one-dimensional array. The process extracts all elements in order, unwrapping only arrays. Other types are left unchanged.
+
+For example:
+Original 	Flattened
+[[1], [], [2, [3]]] 	[1, 2, 3]
+[1, {"foo": "bar"}, [2]] 	[1, {"foo": "bar"}, 2]
+["baz", [1, 2], {}] 	["baz", 1, 2, {}]
+
+Objective: Fulfill the user stories below and get all the tests to pass to complete the lab.
+
+User Stories:
+
+    You should have a function named steamrollArray.
+    The steamrollArray function should accept one argument: a nested array.
+    The function should flatten the nested array, accounting for varying levels of nesting.
+    Your solution should not use the Array.prototype.flat() or Array.prototype.flatMap() methods.
+    Global variables should not be used.
+
+
+----------------------------------------
+SOLUTION
+---------------------------------------- */
+
+function steamrollArray(arr) {
+  let flat = [];
+
+  for(let i = 0; i < arr.length; i++){
+    if(Array.isArray(arr[i])){
+      console.log(arr[i]);
+      flat = flat.concat(steamrollArray(arr[i])); //Principe d'itération
+      console.log(arr[i]);
+    } else {
+      flat.push(arr[i]);
+    }
+  }
+  console.log("flat: " + flat);
+  return flat;
+}
+
+steamrollArray([[["a"]], [["b"]]]);
+
+
