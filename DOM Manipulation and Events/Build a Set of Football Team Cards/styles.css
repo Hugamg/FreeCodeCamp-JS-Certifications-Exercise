@@ -1,0 +1,66 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-main: #0a0a23;   
+  --bg-card: #f5f6f7;   
+  --text-main: #ffffff; 
+  --text-dark: #000;  
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main); 
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  text-align: center;
+  padding: 10px;
+}
+
+.title {
+  margin: 1.3rem 0;
+}
+
+.team-stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  font-size: 1.3rem;
+  margin: 1.2rem 0;
+}
+
+.options-label {
+  font-size: 1.2rem;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.player-card {
+  background-color: var(--bg-card);
+  color: var(--text-dark); 
+  padding: 1.3rem;
+  width: 300px;
+  border-radius: 15px;
+  margin: 1.2rem;
+}
+
+#players{
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  padding: 0.7rem; 
+}
+
+@media (max-width: 768px) {
+  .team-stats {
+    flex-direction: column;
+  }
+}
