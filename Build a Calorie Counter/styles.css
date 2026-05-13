@@ -1,0 +1,212 @@
+:root {
+  /* Palette Bien-être : Verts matcha, Or et Blanc crème */
+  --bg-cream: #F9FAF7;
+  --white: #FFFFFF;
+  --matcha-light: #D4E0D2;
+  --matcha-green: #89A88A;
+  --matcha-dark: #4A634B;
+  --gold-accent: #D4AF37;
+  --gold-light: #F3E5AB;
+  --text-dark: #2C352D;
+  --text-muted: #6B7B6C;
+  
+  --error-color: #D98880;
+  --success-color: #89A88A;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Gowun Dodum', sans-serif;
+  font-size: 16px;
+  background-color: var(--bg-cream);
+  color: var(--text-dark);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+main {
+  width: 100%;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  text-align: center;
+  color: var(--matcha-dark);
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--white);
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(74, 99, 75, 0.08);
+  border: 1px solid var(--matcha-light);
+}
+
+label, legend {
+  font-weight: 600;
+  color: var(--matcha-dark);
+  display: block;
+  margin-bottom: 8px;
+}
+
+legend {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  padding: 0 10px;
+  color: var(--gold-accent);
+}
+
+fieldset {
+  border: 1px solid var(--matcha-light);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 25px;
+  background-color: #FCFDFB;
+  transition: all 0.3s ease;
+}
+
+fieldset:hover {
+  border-color: var(--matcha-green);
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Style des champs de saisie */
+input, select {
+  font-family: 'Gowun Dodum', sans-serif;
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--matcha-light);
+  border-radius: 8px;
+  background-color: var(--bg-cream);
+  color: var(--text-dark);
+  font-size: 1rem;
+  transition: border 0.3s, box-shadow 0.3s;
+  margin-bottom: 15px;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--gold-accent);
+  box-shadow: 0 0 0 3px var(--gold-light);
+}
+
+/* Boutons */
+button {
+  font-family: 'Gowun Dodum', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 12px 24px;
+  border-radius: 50px; /* Style pilule très tendance */
+  border: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-primary {
+  background-color: var(--matcha-green);
+  color: var(--white);
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.btn-primary:hover {
+  background-color: var(--matcha-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 99, 75, 0.2);
+}
+
+.btn-secondary {
+  background-color: var(--gold-accent);
+  color: var(--white);
+  padding: 10px 20px;
+}
+
+.btn-secondary:hover {
+  background-color: #C5A02E;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--matcha-light);
+  color: var(--text-muted);
+  width: 100%;
+}
+
+.btn-outline:hover {
+  border-color: var(--error-color);
+  color: var(--error-color);
+}
+
+.controls {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed var(--matcha-light);
+}
+
+.controls span {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Section Résultats */
+.output {
+  margin-top: 30px;
+  background-color: var(--matcha-light);
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--matcha-dark);
+  border: 1px solid var(--matcha-green);
+}
+
+.hide {
+  display: none;
+}
+
+.output span {
+  font-weight: bold;
+  font-size: 1.5em;
+  font-family: 'Playfair Display', serif;
+  display: block;
+  margin-top: 10px;
+}
+
+/* Couleurs des résultats */
+.surplus {
+  color: var(--error-color);
+}
+
+.deficit {
+  color: var(--matcha-dark);
+}
