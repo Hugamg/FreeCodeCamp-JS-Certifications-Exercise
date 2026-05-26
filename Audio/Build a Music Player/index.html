@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lecteur de Musique Minimaliste</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="player-container">
+
+    <!-- L'encadré qui masque la moitié du vinyle -->
+    <div id="vinyl-wrapper" class="vinyl-wrapper">
+      <div id="vinyl-record" class="vinyl-record">
+        <img id="album-art" src="" alt="">
+        <div class="disc-center">
+          <div class="disc-hole"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Informations de la musique -->
+    <div class="song-info">
+      <h2 id="player-song-title" class="monoton-regular">Sélectionnez une musique</h2>
+      <p id="player-song-artist">Artiste</p>
+    </div>
+
+    <!-- Barre de temps -->
+    <div class="time-container">
+      <span id="current-time">0:00</span>
+      <div id="equalizer" class="equalizer">
+        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+      </div>
+      <span id="total-time">0:00</span>
+    </div>
+
+    <!-- Contrôles -->
+    <div class="controls">
+      <button id="previous" class="control-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+          <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
+        </svg>
+      </button>
+      <button id="play" class="control-btn main-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+      </button>
+      <button id="pause" class="control-btn main-btn hidden">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+          <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+        </svg>
+      </button>
+      <button id="next" class="control-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+          <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
+        </svg>
+      </button>
+    </div>
+      <!-- Playlist -->
+      <div class="playlist-container">
+        <div class="playlist-header">
+          <span class="playlist-title">PLAYLIST</span>
+          <span class="playlist-count" id="playlist-count">10 titres</span>
+        </div>
+        <ul id="playlist-songs" class="playlist">
+          <!-- Les musiques seront injectées ici par le JS -->
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
