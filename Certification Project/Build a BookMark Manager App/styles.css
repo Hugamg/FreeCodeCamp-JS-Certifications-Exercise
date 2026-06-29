@@ -1,0 +1,300 @@
+/* ===== VARIABLES ===== */
+:root {
+  --parchment: #f4e4c1;
+  --parchment-dark: #e8d5a3;
+  --ink: #2c1810;
+  --ink-light: #4a2f1a;
+  --leather: #8b4513;
+  --leather-dark: #5c2d0a;
+  --gold: #c9a84c;
+  --gold-light: #e8c97a;
+  --gold-dark: #9a7a2a;
+  --aged-white: #fdf6e3;
+  --shadow: rgba(44, 24, 16, 0.4);
+}
+
+/* ===== RESET ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
+  min-height: 100vh;
+  background-color: #1a0f0a;
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(139, 69, 19, 0.3) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(101, 50, 10, 0.3) 0%, transparent 60%);
+  font-family: 'Georgia', 'Times New Roman', serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+/* ===== MAIN ===== */
+main {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* ===== HIDDEN ===== */
+.hidden {
+  display: none;
+}
+
+/* ===== SECTION - EFFET PARCHEMIN ===== */
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  width: 480px;
+  padding: 30px 50px;
+
+  background-color: var(--parchment);
+  background-image: linear-gradient(
+    135deg,
+    var(--aged-white) 0%,
+    var(--parchment) 40%,
+    var(--parchment-dark) 100%
+  );
+
+  border: 3px solid var(--gold-dark);
+  outline: 1px solid var(--gold);
+  outline-offset: -8px;
+  border-radius: 4px;
+
+  box-shadow:
+    0 10px 40px var(--shadow),
+    0 2px 8px rgba(0, 0, 0, 0.5),
+    inset 0 0 80px rgba(139, 69, 19, 0.08);
+
+  position: relative;
+}
+
+/* Reliure gauche */
+section::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 14px;
+  background: linear-gradient(
+    to right,
+    var(--leather-dark),
+    var(--leather),
+    var(--leather-dark)
+  );
+  border-radius: 4px 0 0 4px;
+}
+
+/* Ligne dorée reliure */
+section::after {
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 10px;
+  bottom: 10px;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--gold),
+    var(--gold-dark),
+    var(--gold),
+    transparent
+  );
+}
+
+/* ===== TITRES ===== */
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  font-style: italic;
+  color: var(--ink);
+  text-align: center;
+  margin-top: 10px;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 0 rgba(201, 168, 76, 0.5);
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--ink-light);
+  text-align: center;
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+
+/* ===== LABELS ===== */
+label {
+  font-size: 1rem;
+  color: var(--ink);
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  margin-left: 10px;
+}
+
+/* ===== DIVS ===== */
+div {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ===== SELECT ===== */
+select {
+  font-family: 'Georgia', serif;
+  font-size: 0.95rem;
+  color: var(--ink);
+  background-color: var(--aged-white);
+  border: 2px solid var(--gold-dark);
+  border-radius: 3px;
+  padding: 6px 12px;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px rgba(201, 168, 76, 0.3);
+}
+
+/* ===== INPUTS ===== */
+input {
+  font-family: 'Georgia', serif;
+  font-size: 0.95rem;
+  color: var(--ink);
+  background-color: var(--aged-white);
+  border: none;
+  border-bottom: 2px solid var(--gold-dark);
+  padding: 6px 10px;
+  width: 220px;
+  margin-left: 8px;
+  transition: border-color 0.2s;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 95%,
+    var(--gold) 100%
+  );
+}
+
+input:focus {
+  outline: none;
+  border-bottom-color: var(--leather);
+  box-shadow: 0 2px 0 var(--gold-light);
+}
+
+input::placeholder {
+  color: rgba(74, 47, 26, 0.4);
+  font-style: italic;
+}
+
+/* ===== BOUTONS ===== */
+button {
+  cursor: pointer;
+  padding: 8px 16px;
+  width: 130px;
+  margin: 8px;
+  font-family: 'Georgia', serif;
+  font-size: 0.85rem;
+  font-style: italic;
+  letter-spacing: 0.5px;
+  color: var(--ink);
+
+  background-color: var(--gold);
+  background-image: linear-gradient(
+    to bottom,
+    var(--gold-light),
+    var(--gold),
+    var(--gold-dark)
+  );
+
+  border: 2px solid var(--gold-dark);
+  border-radius: 3px;
+
+  box-shadow:
+    0 2px 4px var(--shadow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background-image: linear-gradient(
+    to bottom,
+    var(--gold),
+    var(--gold-dark),
+    var(--leather)
+  );
+  color: var(--aged-white);
+  border-color: var(--leather);
+  box-shadow:
+    0 4px 8px var(--shadow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px var(--shadow);
+}
+
+/* ===== CATEGORY LIST ===== */
+#category-list {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-self: center;
+  width: 85%;
+  margin-top: 15px;
+  border-radius: 3px;
+
+  background-color: var(--aged-white);
+  background-image: linear-gradient(
+    to bottom,
+    var(--aged-white),
+    var(--parchment)
+  );
+
+  border: 1px solid var(--gold-dark);
+  box-shadow:
+    inset 0 2px 6px rgba(44, 24, 16, 0.1),
+    0 2px 4px var(--shadow);
+}
+
+#category-list p {
+  color: var(--ink);
+  font-family: 'Georgia', serif;
+  font-size: 0.95rem;
+  padding: 8px;
+  border-bottom: 1px dashed var(--parchment-dark);
+}
+
+#category-list p:last-child {
+  border-bottom: none;
+}
+
+/* ===== CLOSE BUTTON SPECIAL ===== */
+.close-form-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--ink-light);
+  text-decoration: underline;
+  font-style: italic;
+}
